@@ -1,4 +1,4 @@
-\documentclass[10pt,twoside,slovak,a4paper]{article}
+\documentclass[10pt,twoside,slovak,a4paper]{coursepaper}
 \usepackage[slovak]{babel}
 %\usepackage[T1]{fontenc}
 \usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
@@ -51,7 +51,11 @@ Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlen
 
 % \begin{figure*}[tbh]
 % \centering
-\includegraphics[scale=0.5]{diagram.pdf}
+
+\section{Záverečné poznámky} \label{zaver}
+\input{novy.tex}
+
+% \includegraphics[scale=0.5]{diagram.pdf}
 % Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
 % \caption{Rozhodujúci argument.}
 % \label{f:rozhod}
@@ -109,6 +113,6 @@ Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlen
 
 % týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \cite{texbook}
-\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliographystyle{abbrv} % prípadne alpha, abbrv alebo hociktorý iný
 \bibliography{literatura}
 \end{document}
