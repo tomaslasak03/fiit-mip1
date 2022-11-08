@@ -1,79 +1,45 @@
+% Metódy inžinierskej práce
+
 \documentclass[10pt,twoside,slovak,a4paper]{article}
+
 \usepackage[slovak]{babel}
-\usepackage[IL2]{fontenc}
+%\usepackage[T1]{fontenc}
+\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-\usepackage{url}
-\usepackage{hyperref}
+\usepackage{url} % príkaz \url na formátovanie URL
+\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
 
 \usepackage{cite}
+%\usepackage{times}
 
 \pagestyle{headings}
 
-\title{Obmedzení už len predstavivosťou\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2022/23, vedenie: Zuzana Špitálová}}
+\title{Názov\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2015/16, vedenie: Meno Priezvisko}} % meno a priezvisko vyučujúceho na cvičeniach
 
-\author{Tomáš Lasak\\[2pt]
+\author{Meno Priezvisko\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{xlasak@stuba.sk}}
+	{\small \texttt{...@stuba.sk}}
 	}
 
-\date{\small 30. Október 2022}
+\date{\small 30. september 2015} % upravte
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-	
-	Ako už býva zvykom načrtneme do základných princípov počítača. Myslím si totiž, že je dôležité veci chápať predtým ako s nimi začneme pracovať. Ďalej sa vrhneme už na samotnú prácu a využitie technológií, čo nám svet prináša. Nebudem si vymýšľať ak teraz poviem, že vytvoriť v dnešnej dobe zaujímavú, až dych berúcu webovú stránku nie je ťažké. Má to však menší háčik, ťažké je v tomto prípade myslené ako náročnosť si osvojiť technológiu na tvorbu takejto stránky.    S rastúcim záujmom však rastie aj konkurencia a stáva sa z toho závod nami individuálne vnímaní. Pre niekoho vrátane mňa môže ísť o hru, kde vašim cieľom je predstaviť niečo obrovské a po dosiahnutí úspechu ho opakovať a stále dookola. Preto som sa rozhodol napísať ako vnímam ja svojimi očami kam smerujeme. Baví ma to a užívam si túto hru, a teší ma, že každým dňom vidím aj rastúcu sa komunitu ľudí v tejto hre konkurovať. Aj pre prípad, že za sebou nemáte toľko skúseností, snažil som sa opisovať oblasti viacej abstraktne, aby bolo možné si to aspoň predstaviť a pohrať sa s predstavivosťou, čo je aj hlavná myšlienka celého projektu.
+\section{Rámocová téma}
 
-\end{abstract}
+Týmto článkom by som chcel čitateľom ukázať ako sa za posledné roky stalo z tvorby webových stránok hra. Nie asi taká, ako si každý tom týmto pojmom predstaví. Ide o hru s našou predstavivosťou. Máme možnosti a technológie, vďaka ktorým sa môžeme vyhrať s našou webovou stránkou a vytvoriť tak umelecké dielo, hru, alebo len zaujímavú vychytávku pre používateľov.
 
-\section{Technológie}
+Nikdy predtým tvorba webových stránok nebola jednoduchšia, dnes sme schopný vytvoriť webovú stránku prakticky bez nutnosti ovládať základne poznanie o webe ako takom, máme aplikácie, ktoré skladajú prvky za nás. Mojim hlavným zameraním bude konkrétne 3D. Od začiatkov ako sa nám zobrazuje až po tvorbu 3D hier, interakcii v aktuálnom období.
 
-V tejto sekcii budú spomenuté základné znalosti o technológiach, ktoré sa budú spomínať v ďalších častiach. 
+% inak svieti error
+\cite{Kang:FODA}
 
-\subsection{Procesor}
-
-"V dnešnej dobe sa stretávame s dvomi typmi procesorov v počítačoch, známe pod názvami CPU a GPU. Už takmer všetky počítače obsahujú najmenej dva procesory."\cite{Graphics-programming} Každý z nich je unikátny a vhodný na iné typy výpočtov. Nás bude zaujímať hlavne GPU. GPU inak ako grafický procesor zvyčajne už dnes umiestnený v grafickej karte, no vieme sa s nim stretnúť aj v inej podobe. Tento procesor je zaujímavý svojou výkonnosťou. Vie spracovať množstvo menších výpočtov oveľa rýchlejšie ako CPU. Efektívne vie vypočítať a aplikovať zmeny grafického rozhrania. To je nám ako užívateľom bližšie, pretože zmenu vieme zaznamenať vizuálne.
-
-\subsection{OpenGL}
-
-Pre prípad, že ste si položili otázku, ako vieme komunikovať s GPU, mám pre vás odpoveď. Ak nie odpoveď tu bude pre vás tiež, no s jej obsahom budete musieť naložiť ako uznáte za vhodné. Obrazne si vieme predstaviť, že medzi nami a GPU je OpenGL. "OpenGL je moderná multiplatformová knižnica na prepojenie sa s GPU za účelom vykresľovania 3D grafiky v reálnom čase." \cite{Graphics-openGL} Jej súčasťou je mnoho preddefinovaných funkcii pre prácu s 3D objektami. A pre prípad, že nemáte skúsenosti so žiadnym programovacím jazykom, tak si môžete predstaviť programovanie ako sadu inštrukcii a príkazov pre počítač, niekedy niečo potrebujeme viackrát, a tak, aby sme sa vyhli opakovaniu v písaní toho istého stále dookola si obalíme náš príkaz do funkcii ktorú môžeme ďalej v používať kdekoľvek chceme. Knižnicu si zas vieme predstaviť ako veľkú sadu funkcii spolu, ktorú si vieme stiahnuť z nejakého zdroja a používať vo svojom kóde ak nám to autor dovoľuje. Najväčšiu časť OpenGL knižnice zaberajú funkcie pracujúce s matematickými výpočtami zväčša sa týkajúce lineárnej algebry, kde ako a za akých podmienok budú objekty alebo modely zobrazené. 
-
-\subsection{WebGL}
-
-Už zostáva spomenúť iba ako vieme zobrazovať 3D grafiku na webovej stránke. Na to nám pomôže WebGL. WebGL je grafická knižnica na vykresľovanie 2D a 3D grafiky na webových stránkach. Samotná knižnica WebGL je postavená na knižnici OpenGL. Za pomoci JavaScriptu a html vieme využiť WebGL na tvorbu 2D a 3D grafických prvkov. Html tvorí štruktúru stránky a elementy v ňom reprezentujú obsah stránky. Element ktorý potrebujeme v našom prípade je canvas, je to element určený na zobrazovanie 2D a 3D grafického obsahu. JavaScript je programovací jazyk, ktorý dodáva webovej stránke dynamickosť. Vieme si to predstaviť ako človeka, kostru tvorí html, o vzhľad sa stará CSS,  CSS je jazyk, v ktorom sa upravuje vzhľad a správanie html elementov a nakoniec pohyb človeka predstavuje JavaScript. Niekto so skúsenosťami by mohol namietať, no budeme sa držať tohto abstraktného zobrazenia.
-
-\subsection{Blender}
-
-Ako som už vyššie spomínal modely, tak tie našťastie nemusíme ručne kódovať. Na ťažšie alebo komplexnejšie 3D modely môžeme využiť 3D program. Máme ich mnoho na výber ja spomeniem iba Blender. Je zadarmo a dostupný pre širokú verejnosť. Výhodou je taktiež aj, že je to open-source softvér. Jeho zdrojový kód je totiž dostupný pre širokú verejnosť a každý má možnosť vytvoriť a nahrať nejaké to svoje vylepšenie.
-
-\section{Vývoj}
-
-Svet technológií sa hýbe neskutočnou rýchlosťou. Čo bolo včera najrýchlejšie dnes už nemusí.
-
-\subsection{Three.js}
-j
-Tak isto to platí aj vo svete tvorby webových stránok. Každým dňom sa technológie zlepšujú a dostávajú na iný level. Takou veľkou súčasťou je knižnica three.js postavená na funkciách WebGL. Vďaka ktorej sa stala tvorba 3D webových stránok značne jednoduchšia. Three.js prinieslo so sebou mnoho možností od ktorých sa odraziť a začať vyvíjať. Na porovnanie na vytvorenie kocky s funkcionalitou rotácie kurzorom myši bez použitia three.js potrebovali niečo cez 200 riadkov kódu vrátane HTML, CSS, zatiaľ, čo pri three.js je toto číslo menšie ako 50. Týmto sme schopný zvýšiť našu produktivitu. Rozdielom pri používaný three.js oproti je, že v three.js si nemusíme vytvárať 3D objekty ručne určovaním bodov, on to spraví za nás, len si zavoláme funkciu na vytvorenie objektu a o všetko je už postarané, všetky výpočty sú spravené za nás.
-
-\subsection{3D Objekty}
-
-Na začiatok treba spomenúť nejaké základy na prácu s 3D objektami. Pri práci s three.js budeme používať mesh objekty. Mesh objekty sú objekty, ktoré majú aj vrcholy a hrany spojené plochami, patria tu napríklad kocka a guľa. 
-
-\subsection{Základy}
-
-Ešte sa ale musíme zastaviť pri jednom bode aby to všetko fungovalo. Aby sme vedeli vytvoriť takúto scénu pomocou threr.js budeme potrebovať spojiť niekoľko častí. Budeme potrebovať scénu, v našom prípade to bude okno prehliadača. Ďalej si vytvoriť kameru, bez nej by sme náš objekt asi horko ťažko hľadali, to isté platí aj pre svetlo. A nakoniec niečo čo nám to vlastne vykreslí do tej našej scény.
-
-\subsection{Animácia}
-
-Ideme dobrým smerom, chýba nám už len pohyb, nejaká animácia, možno rotácia ? Alebo či už iný pohyb. JavaScript má v sebe zabudovanú funkciu requestAnimationFrame, ktorej úlohou ako už možno názov napovedá bude animovať veci, ktoré sa nachádzajú vo vnútri, aby ale animácia fungovala treba ju na konci funkcie zavolať znova, tým vytvoríme cyklus a všetko čo sme zahrnuli do funkcie sa bude meniť a vzniká tým animácia, treba si dávať pozor, ak to s hodnotami preženieme, naša scéna sa môže začať správať divne. 
-
-\section{Záver}
-
-
-
+% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literatura}
-\bibliographystyle{plain}
+\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
 \end{document}
+
